@@ -1,0 +1,8 @@
+var client = new HttpClient();
+var request = new HttpRequestMessage(HttpMethod.Get, "http://78.186.114.47:54245/ravi-m/control");
+request.Headers.Add("data", "kitapevim_2023");
+request.Headers.Add("posno", "0");
+request.Headers.Add("kno", "12");
+var response = await client.SendAsync(request);
+response.EnsureSuccessStatusCode();
+Console.WriteLine(await response.Content.ReadAsStringAsync());
