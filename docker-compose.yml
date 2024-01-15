@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./akyg
+    command: python3 api.py -h 0.0.0.0
+    volumes:
+      - ./akyg/:/usr/src/app/
+    ports:
+      - 5001:5000
